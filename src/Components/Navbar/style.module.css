@@ -1,0 +1,23 @@
+/* Navigation */
+.nav{
+    grid-area: nav;
+    background-color: rgb(206, 202, 146);
+    color: rgb(44, 26, 113);
+    border-radius: var(--bora);
+}
+
+.nav__list {
+    padding-right: 10px;
+}
+.nav__item {
+    font-size: 24px;
+    color: rgb(44, 26, 113);
+}
+
+.nav__item:hover {
+    background-color: rgb(175, 153, 124);
+    cursor: pointer;
+}
+.active {
+    color: rgb(255, 255, 255);
+}

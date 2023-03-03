@@ -1,0 +1,10 @@
+.banner__wrapper {
+    max-width: 995px;
+    max-height: 300px;
+    border-radius: var(--bora);
+    overflow: hidden;
+}
+.banner {
+    object-fit: scale-down;
+    width: 100%;
+}

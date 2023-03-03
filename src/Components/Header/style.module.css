@@ -1,0 +1,12 @@
+/* Header */
+.header {
+    grid-area: header;
+    background-color: darkgray;
+    border-radius: var(--bora);
+    width: 100%;
+}
+
+.header__logo {
+    width: 40px;
+    padding: 5px;
+}

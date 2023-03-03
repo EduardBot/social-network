@@ -1,0 +1,32 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+
+/* Main */
+
+:root {
+    --border-radius: 10px;
+    --bora: var(--border-radius);
+}
+
+.App {
+    width: 1200px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "nav content";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+}
+
+.content {
+    grid-area: content;
+    background-color: rgb(194, 201, 215);
+    border-radius: var(--bora);
+}
