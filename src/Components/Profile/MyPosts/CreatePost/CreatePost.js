@@ -1,16 +1,15 @@
 import React from "react";
 import classes from "./style.module.css";
 
+const CreatePost = () => {
 let newPostElement = React.createRef();
-
 let addPost = () => {
   let text = newPostElement.current.value;
   alert(text);
 }
 
-const CreatePost = () => {
   return (
-    <div className="createPostWrapper">
+    <div className={classes.createPostWrapper}>
       <div>
         <textarea
           ref={newPostElement}

@@ -29,4 +29,5 @@
     grid-area: content;
     background-color: rgb(194, 201, 215);
     border-radius: var(--bora);
+    padding: 10px;
 }
