@@ -7,7 +7,7 @@ let postList = props.posts.map ( post => <Post message={post.message} likesCount
 
   return (
     <ul className={classes.posts}>
-      <CreatePost />
+      <CreatePost addPost={props.addPost} />
       {postList}
     </ul>
   );

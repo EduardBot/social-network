@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./style.module.css";
 
-const CreatePost = () => {
-let newPostElement = React.createRef();
-let addPost = () => {
-  let text = newPostElement.current.value;
-  alert(text);
-}
+const CreatePost = (props) => {
+  let newPostElement = React.createRef();
+  let addPost = () => {
+    let text = newPostElement.current.value;
+    props.addPost(text);
+  };
 
   return (
     <div className={classes.createPostWrapper}>
@@ -18,10 +18,8 @@ let addPost = () => {
         ></textarea>
       </div>
       <div>
-        <button
-        className={classes.btn}
-        onClick={addPost}
-          >Add post
+        <button type="button" className={classes.btn} onClick={addPost}>
+          Add post
         </button>
       </div>
     </div>
