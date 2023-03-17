@@ -15,7 +15,7 @@ function App(props) {
         <Navbar />
         <div className='content'>
           <Routes>
-            <Route path='/' element={<Profile state={props.Appstate.profilePage} addPost={props.addPost} />} />
+            <Route path='/' element={<Profile profilePage={props.Appstate.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />} />
             <Route path='/dialogs/*' element={<Dialogs state={props.Appstate.messagesPage} />} />
           </Routes>
         </div>
