@@ -1,5 +1,5 @@
 let store = {
-    _state : {
+    _state: {
         profilePage: {
             postsData: [
                 {id: '1', message: 'как дела?', likesCount: '0'},
@@ -27,8 +27,11 @@ let store = {
     getState() {
         return this._state;
     },
-    rerenderEntireTree() {
+    _callSubscriber() {
         console.log('state changed');
+    },
+    getCallSubscriber() {
+        return this._callSubscriber;
     },
     addPost() {
         let newPost = {
@@ -38,14 +41,14 @@ let store = {
         };
         this._state.profilePage.postsData.push(newPost);
         this._state.profilePage.newPostText = '';
-        this.rerenderEntireTree();
+        this._callSubscriber();
     },
     updateNewPostText(newText) {
         this._state.profilePage.newPostText = newText;
-        this._rerenderEntireTree();
+        this._callSubscriber();
     },
     subscribe(observer) {
-        this.rerenderEntireTree = observer;
+        this._callSubscriber = observer;
     }
 }
 

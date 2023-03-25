@@ -3,8 +3,7 @@ import classes from "./style.module.css";
 
 const CreatePost = (props) => {
 let newPostElement = React.createRef();
-
-let addPost = () => {
+let adddPost = () => {
   props.addPost();
 }
 
@@ -24,7 +23,7 @@ let onPostChange = () => {
           placeholder="Введите текст поста" />
       </div>
       <div>
-        <button type="button" className={classes.btn} onClick={addPost}>
+        <button type="button" className={classes.btn} onClick={adddPost}>
           Add post
         </button>
       </div>

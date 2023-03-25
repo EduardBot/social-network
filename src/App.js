@@ -1,6 +1,5 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
-
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
@@ -15,8 +14,12 @@ function App(props) {
         <Navbar />
         <div className='content'>
           <Routes>
-            <Route path='/' element={<Profile profilePage={props.Appstate.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />} />
-            <Route path='/dialogs/*' element={<Dialogs state={props.Appstate.messagesPage} />} />
+            <Route path='/' element={<Profile
+            profilePage={props.appstate.profilePage}
+            addPost={props.addPost}
+            updateNewPostText={props.updateNewPostText} />} />
+            <Route path='/dialogs/*' element={<Dialogs
+            state={props.appstate.messagesPage} />} />
           </Routes>
         </div>
       </div>
