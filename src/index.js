@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import store from "./Components/redux/state";
 
 
-let rerenderEntireTree = () => {
+let rerenderEntireTree = (state) => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(
     <React.StrictMode>
