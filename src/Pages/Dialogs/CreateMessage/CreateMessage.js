@@ -1,11 +1,17 @@
 import React from "react";
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from "../../../Components/redux/state";
 import classes from "./style.module.css";
 
-const CreateMessage = () => {
+const CreateMessage = (props) => {
 let newMessageElement = React.createRef();
+
+let onMessageChange = () => {
+  let text = newMessageElement.current.value;
+  props.dispatchMessage(updateNewMessageTextActionCreator(text));
+}
+
 let addMessage = () => {
-    let text = newMessageElement.current.value;
-    alert(text);
+  props.dispatchMessage(addMessageActionCreator());
 }
 
   return (
@@ -15,11 +21,12 @@ let addMessage = () => {
           ref={newMessageElement}
           className={classes.newMessage}
           placeholder="Введите текст поста"
+          onChange={onMessageChange}
         ></textarea>
       </div>
       <div>
         <button className={classes.btn} onClick={addMessage}>
-          Add post
+          Add message
         </button>
       </div>
     </div>

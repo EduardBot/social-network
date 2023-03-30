@@ -1,15 +1,17 @@
 import React from "react";
+import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../redux/state";
 import classes from "./style.module.css";
 
 const CreatePost = (props) => {
 let newPostElement = React.createRef();
+
 let adddPost = () => {
-  props.addPost();
+  props.dispatchPost(addPostActionCreator());
 }
 
 let onPostChange = () => {
   let text = newPostElement.current.value;
-  props.updateNewPostText(text);
+  props.dispatchPost(updateNewPostTextActionCreator(text));
 }
 
   return (
@@ -17,7 +19,7 @@ let onPostChange = () => {
       <div>
         <textarea
           onChange={onPostChange}
-          value={props.newPostText}
+          // value={props.newPostText}
           ref={newPostElement}
           className={classes.newPost}
           placeholder="Введите текст поста" />
