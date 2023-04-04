@@ -102,7 +102,7 @@ let store = {
     },
 
 // Action creator
-    dispatchPost(action) {
+    dispatch(action) {
         if (action.type === "ADD-POST") {
             let newPost = {
                 id: '5',
@@ -115,10 +115,7 @@ let store = {
         } else if (action.type === "UPDATE-NEW-POST-TEXT") {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber();
-        }
-    },
-    dispatchMessage(action) {
-        if (action.type === "ADD-MESSAGE") {
+        } else if (action.type === "ADD-MESSAGE") {
             let newMessage = {
                 id: '5',
                 message: this._state.messagesPage.newMessageText
@@ -130,7 +127,7 @@ let store = {
             this._state.messagesPage.newMessageText = action.newText;
             this._callSubscriber();
         }
-    }
+    },
 }
 
 export default store;

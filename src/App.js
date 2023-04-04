@@ -14,12 +14,14 @@ function App(props) {
         <Navbar />
         <div className='content'>
           <Routes>
-            <Route path='/' element={<Profile
+            <Route path='/'
+            element={<Profile
             profilePage={props.appstate.profilePage}
-            dispatchPost={props.dispatchPost} />} />
-            <Route path='/dialogs/*' element={<Dialogs
+            dispatchPost={props.dispatch} />} />
+            <Route path='/dialogs/*'
+            element={<Dialogs
             state={props.appstate.messagesPage}
-            dispatchMessage={props.dispatchMessage} />} />
+            dispatchMessage={props.dispatch} />} />
           </Routes>
         </div>
       </div>
